@@ -114,7 +114,7 @@ def main():
         prio = client_priorities[selected_client]
         initial_clients.append((selected_client, prio))
     arr.extend(initial_clients)
-    arr.sort(key=lambda x: x[1])  # Sortează la început
+    arr.sort(key=lambda x: x[1])  # Sortează la început de coada
 
     while True:
         afisare_coada()
