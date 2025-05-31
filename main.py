@@ -4,7 +4,6 @@ import os
 import sqlite3 # Added for SQLite
 import datetime # Added for timestamping
 
-# Database setup
 DB_NAME = "queue.db"
 
 def get_db_connection():
