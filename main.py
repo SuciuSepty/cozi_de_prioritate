@@ -1,4 +1,19 @@
 import random
+import sys
+import os
+
+# Configure stdout/stderr for UTF-8 on Windows, if possible
+if os.name == 'nt':  # 'nt' is for Windows
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except AttributeError:
+        # sys.stdout.reconfigure might not be available on older Python versions
+        # or in some environments.
+        print("Warning: Could not reconfigure stdout/stderr for UTF-8 automatically. Special characters might not display correctly. Consider running in a UTF-8 compatible terminal or setting PYTHONIOENCODING=UTF-8.", file=sys.stderr)
+    except Exception as e:
+        print(f"An unexpected error occurred while trying to reconfigure stdout/stderr: {e}", file=sys.stderr)
+
 
 # Șanse de generare și Priorități pentru fiecare tip client
 client_types = {
